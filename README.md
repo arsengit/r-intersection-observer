@@ -31,19 +31,28 @@ function Example () {
     )
  }
 
+
+
 ```
+ ```bash
+
+  inView returns boolean if element is intersecting or not
+
+ ```
 ## Properties
-|Name| Required | Type | Default Description |
-|----| -------- | ---- | ------------------- |
-|rootMargin| false | strin | define rootMargin option|
-|threshold| false | number | define threshold option|
-|root|  false   | JSX  | define root option |
-|callBack| false | function | callback after intersecting|
-|onlyCallBack| false | boolean | returns only callBack function|
-|onlyOnce| false | boolean | intersecting entry only once|
-|classname| false | string | define classname for component|
+|Name| Required | Type | Description | Default Value |
+|----| -------- | ---- | ------------------- | ---- |
+|rootMargin| false | string | define rootMargin option| 0px |
+|threshold| false | number | define threshold option| 0 |
+|root|  false   | JSX  | define root option | -- |
+|callBack| false | function | callback after intersecting| -- |
+|onlyCallBack| false | boolean | returns only callBack function| false |
+|onlyOnce| false | boolean | intersecting entry only once| true |
+|className| false | string | define className for Observer| -- |
 
-
+|function| arguments |
+| ------ | ---------- |
+| callBack| (isIntersecting: boolean, entry: IntersectionObserverEntry)|
 
 
 ## License
