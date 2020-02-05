@@ -32,6 +32,11 @@ function Example () {
  }
 
 ```
+## Properties
+|Name| Required | Type | Default Description |
+|----| -------- | ---- | ------------------- |
+|root|  false   | JSX  | define your root option |
+
 
 ## License
 
