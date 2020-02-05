@@ -35,7 +35,15 @@ function Example () {
 ## Properties
 |Name| Required | Type | Default Description |
 |----| -------- | ---- | ------------------- |
-|root|  false   | JSX  | define your root option |
+|rootMargin| false | strin | define rootMargin option|
+|threshold| false | number | define threshold option|
+|root|  false   | JSX  | define root option |
+|callBack| false | function | callback after intersecting|
+|onlyCallBack| false | boolean | returns only callBack function|
+|onlyOnce| false | boolean | intersecting entry only once|
+|classname| false | string | define classname for component|
+
+
 
 
 ## License
