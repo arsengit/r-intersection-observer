@@ -15,15 +15,22 @@ npm install --save r-intersection-observer
 ```tsx
 import * as React from 'react'
 
-import MyComponent from 'r-intersection-observer'
+import Observer from 'r-intersection-observer'
 
-class Example extends React.Component {
-  render () {
+function Example () {
     return (
-      <MyComponent />
+      <Observer>
+      {
+        inView => (
+          <div>
+           Observing Element
+          </div>
+        )
+      }
+      </Observer>
     )
-  }
-}
+ }
+
 ```
 
 ## License

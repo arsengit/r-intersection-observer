@@ -1,6 +1,6 @@
 {
   "name": "r-intersection-observer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom React intersection observer component",
   "author": "arsengit",
   "license": "MIT",
