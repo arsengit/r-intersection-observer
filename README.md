@@ -52,7 +52,7 @@ function Example () {
 
 |function| arguments |
 | ------ | ---------- |
-| callBack| (isIntersecting: boolean, entry: IntersectionObserverEntry)|
+| callBack| (isIntersecting: boolean, entry: IntersectionObserverEntry, ref: React.MutableRefObject<any>)|
 
 
 ## License

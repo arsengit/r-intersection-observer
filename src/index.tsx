@@ -9,10 +9,11 @@ export interface IIntersectionObserverProps
   rootMargin?: string;
   threshold?: number;
   root?: JSX.Element | any;
-  callBack?: (isIntesecting?: boolean, entry?: IntersectionObserverEntry) => void;
+  callBack?: (isIntesecting?: boolean, entry?: IntersectionObserverEntry, sectionRef?: React.MutableRefObject<any>) => void;
   className?: string;
   onlyOnce?: boolean;
   onlyCallBack?: boolean;
+  style?: React.CSSProperties;
   children?: React.ReactChild | ChildNode | any
 }
 
@@ -34,7 +35,7 @@ export default function ExampleComponent(props: IIntersectionObserverProps)
   }, [])
 
   return (
-    <div className={className} ref={sectionRef}>
+    <div style={props.style} className={className || ""} ref={sectionRef}>
       {props.children(inView)}
     </div>
   )
@@ -60,7 +61,7 @@ export default function ExampleComponent(props: IIntersectionObserverProps)
     {
       if (callBack)
       {
-        callBack(isIntersecting, entry)
+        callBack(isIntersecting, entry, sectionRef)
       }
     }
     else
@@ -78,7 +79,7 @@ export default function ExampleComponent(props: IIntersectionObserverProps)
       }
       if (callBack)
       {
-        callBack(isIntersecting, entry)
+        callBack(isIntersecting, entry, sectionRef)
       }
     }
   }
