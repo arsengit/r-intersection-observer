@@ -20,13 +20,13 @@ import Observer from 'r-intersection-observer'
 function Example () {
     return (
       <Observer>
-      {
-        inView => (
-          <div>
-           Observing Element
-          </div>
-        )
-      }
+        {
+          inView => (
+             <div>
+               Observing Element
+             </div>
+          )
+        }
       </Observer>
     )
  }
@@ -49,6 +49,7 @@ function Example () {
 |onlyCallBack| false | boolean | returns only callBack function| false |
 |onlyOnce| false | boolean | intersecting entry only once| true |
 |className| false | string | define className for Observer| -- |
+|style| false | React.CSSProperties | define style object | -- |
 
 |function| arguments |
 | ------ | ---------- |

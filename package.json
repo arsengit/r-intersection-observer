@@ -1,6 +1,6 @@
 {
   "name": "r-intersection-observer",
-  "version": "^1.0.4",
+  "version": "1.1.0",
   "description": "Simple React intersection observer component",
   "author": "arsengit",
   "license": "MIT",
@@ -21,7 +21,9 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "intersection-observer": "^0.7.0"
+  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",

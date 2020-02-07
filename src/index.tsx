@@ -17,11 +17,11 @@ export interface IIntersectionObserverProps
   children?: React.ReactChild | ChildNode | any
 }
 
-export default function ExampleComponent(props: IIntersectionObserverProps)
+function Observer(props: IIntersectionObserverProps)
 {
   let [inView, setInview] = React.useState<any>(null);
   let sectionRef = React.useRef<any>(null);
-  let { rootMargin, threshold, root, callBack, className } = props;
+  let { rootMargin, threshold, root, callBack, className, style } = props;
   let onlyCallback = false || props.onlyCallBack;
   let onlyOnce = true || props.onlyOnce;
   let options = {
@@ -31,11 +31,21 @@ export default function ExampleComponent(props: IIntersectionObserverProps)
   }
   React.useEffect(() =>
   {
-    observeSection()
+    if (typeof (window as any).IntersectionObserver === "undefined")
+    {
+      import("intersection-observer" as any).then(() =>
+      {
+        observeSection()
+      })
+    }
+    else
+    {
+      observeSection()
+    }
   }, [])
 
   return (
-    <div style={props.style} className={className || ""} ref={sectionRef}>
+    <div style={style || {}} className={className || ""} ref={sectionRef}>
       {props.children(inView)}
     </div>
   )
@@ -84,3 +94,5 @@ export default function ExampleComponent(props: IIntersectionObserverProps)
     }
   }
 }
+
+export default React.memo(Observer);
